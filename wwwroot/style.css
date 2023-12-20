@@ -11,16 +11,17 @@ body {
     height: 100vh;
     font-family: "Arial";
     gap: 16px;
-    background-image: url(th.png);
+    background-color: #2e2e2e;
 }
+
 
 .card{
 
-    background-color: fff;
+    background-color: #ffffff;
     width: 260px;
     height: 340px;      
     border-radius: 12px;
-    box-shadow: 4px 4px 12px #aaa;
+    box-shadow: 4px 4px 12px #020202cb;
 }
 
 .card img{
@@ -40,14 +41,36 @@ body {
 }
 
 .card h1{
-    font-size: 1.2rem;
+    font-family: monospace;
+    font-size: 1.4rem;
+    margin-bottom: 13px;
+    border-right: 4px solid;
+    width: 6ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(10), blinking 0.5s infinite step-end, alternate;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
+.card h2{
+    font-size: 0.7rem;
+    color: #595a5c;
+    
 }
 
 .card button{
-    background-color: #2192FF;
+    background-color: hsl(209, 100%, 57%);
     height: 30px;
-    border: none;
-    padding: 4px;
+    border: 1px solid #555;
+    padding: 10px, 8px;
     width: 80%;
     color: #fff;
     font-size: 1rem;
