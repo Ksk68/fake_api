@@ -12,4 +12,5 @@ public class UserContext : DbContext
     }
 
     public DbSet<User> TodoItems { get; set; } = null!;
+    public DbSet<Chat> Chats { get; set; }
 }

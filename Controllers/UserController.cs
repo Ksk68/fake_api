@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,13 +7,28 @@ using Microsoft.EntityFrameworkCore;
 using UserApi.data;
 using UserApi.models;
 
+
 namespace api.Controllers
 {
-    [Route("api/[UserController]")]
+    [Route("api/UserController")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly UserContext _context;
+        
+        public async Task<ActionResult<Chat>> GetChat(int id)
+        {
+            var chat = await _context.Chats
+                .Include(c => c.ChatMessages)
+                .FirstOrDefaultAsync(c => c.ChatId == id);
+
+            if (chat == null)
+            {
+                return NotFound();
+            }
+
+            return chat;
+        }
 
         public UserController(UserContext context)
         {
