@@ -4,36 +4,39 @@
 }
 
 body {
-
+    font-family: monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: "Arial";
     gap: 16px;
     background-color: #2e2e2e;
 }
 
-
 .card{
-
+    
     background-color: #ffffff;
     width: 260px;
     height: 340px;      
-    border-radius: 12px;
+    border-radius: 7px;
     box-shadow: 4px 4px 12px #020202cb;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: .5s;
 }
 
 .card img{
     width: 100%;
     height: 170px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .card div{
     display: flex;
-    flex-direction: column;
+    flex-direction:  column;
     justify-content: center;
     align-items: center;
     gap: 4px;
@@ -41,15 +44,16 @@ body {
 }
 
 .card h1{
-    font-family: monospace;
+    
     font-size: 1.4rem;
-    margin-bottom: 13px;
-    border-right: 4px solid;
+    margin-bottom: 14px;
+    border-right: 5px solid;
     width: 6ch;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s steps(10), blinking 0.5s infinite step-end, alternate;
 }
+
 @keyframes typing {
     from {
         width: 0;
@@ -61,20 +65,36 @@ body {
     }
 }
 .card h2{
+    
     font-size: 0.7rem;
     color: #595a5c;
-    
+}
+
+.card h2 a{
+    cursor: pointer;
+    color: #595a5c;
 }
 
 .card button{
     background-color: hsl(209, 100%, 57%);
+    font-family: monospace;
     height: 30px;
     border: 1px solid #555;
     padding: 10px, 8px;
-    width: 80%;
+    width: 170px;
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.card button:hover{
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.card span{
+    font-size: 1rem;
 }
 
 
