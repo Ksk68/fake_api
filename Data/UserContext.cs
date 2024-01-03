@@ -1,3 +1,4 @@
+using Azure;
 using Microsoft.EntityFrameworkCore;
 using UserApi.models;
 
@@ -11,6 +12,12 @@ public class UserContext : DbContext
     {
     }
 
-    public DbSet<User> TodoItems { get; set; } = null!;
-    public DbSet<Chat> Chats { get; set; }
+    public DbSet<User> Users { get; set; } = null!;
+    public DbSet<GoodResponse> GoodResponses { get; set; } = null!;
+    public DbSet<noGoodResponse> noGoodResponses { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+    }
 }

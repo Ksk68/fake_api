@@ -1,9 +1,14 @@
-namespace UserApi.models;
+using System.ComponentModel.DataAnnotations;
+using Azure;
 
-public class User{
+namespace UserApi.models
+{
+        
+    public class User{
 
-    public int Id { get; set; }
-
-    public List<Chat> ChatMessages { get; set; } = new List<Chat>();
+        [Key]        
+        public string? prompt{ get; set; }
+    }
 }
+
 
