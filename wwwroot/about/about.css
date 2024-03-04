@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 16px;
+    background-color: #2e2e2e;
+}
+
+.text{
+    background-color: #2e2e2e;
+}
+
+.text h1{
+    color: beige ;
+}
