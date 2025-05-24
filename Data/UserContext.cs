@@ -13,9 +13,6 @@ public class UserContext : DbContext
     }
 
     public DbSet<User> Users { get; set; } = null!;
-    public DbSet<GoodResponse> GoodResponses { get; set; } = null!;
-    public DbSet<noGoodResponse> noGoodResponses { get; set; } = null!;
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

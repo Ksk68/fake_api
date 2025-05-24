@@ -7,21 +7,26 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<UserContext>(opt =>
     opt.UseInMemoryDatabase("TodoList"));
 
-// the swagger
-/* builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); */
+//swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();  
 
 var app = builder.Build();
 
 /* if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}  */
-  
+    
+}   */
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.RoutePrefix = "swagger";
+});
+
 app.UseHttpsRedirection();
 
-// the wwwroot    
+//wwwroot    
 app.UseDefaultFiles();
 app.UseStaticFiles();  
 
